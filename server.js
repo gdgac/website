@@ -3,6 +3,7 @@
 // Module dependencies.
 var express = require('express'),
     path = require('path'),
+    newrelic = require('newrelic'),
     fs = require('fs');
 
 var app = express();
