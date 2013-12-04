@@ -4,7 +4,9 @@ angular.module('gdgacApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'gdgPlus',
+  'angularMoment'
 ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider

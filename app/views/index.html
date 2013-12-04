@@ -1,15 +1,20 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" itemscope itemtype="http://schema.org/Organization"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" itemscope itemtype="http://schema.org/Organization"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" itemscope itemtype="http://schema.org/Organization"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" itemscope itemtype="http://schema.org/Organization"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <base href="/">
-    <title></title>
-    <meta name="description" content="">
+    <title>GDG Aachen</title>
+    <meta name="description" content=" Google Developer Group Aachen is a German/English speaking group meeting in Aachen to discuss Google Technologies.">
     <meta name="viewport" content="width=device-width">
+    <meta itemprop="name" content="GDG Aachen">
+    <meta itemprop="description" content="Google Developer Group Aachen is a German/English speaking group meeting in Aachen to discuss Google Technologies.">
+    <meta property="og:title" content="GDG Aachen" />
+    <meta property="og:image" content="..." />
+    <meta property="og:description" content="Google Developer Group Aachen is a German/English speaking group meeting in Aachen to discuss Google Technologies." />
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <!-- build:css({.tmp,app}) styles/main.css -->
@@ -27,8 +32,69 @@
       <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
+    <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="images/logo.png" /></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Link</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+
     <!-- Add your site or application content here -->
     <div class="container" ng-view=""></div>
+
+    <div class="footer clearfix">
+        <div class="col-md-2">
+            <div class="row">
+                <div class="col-md-2"><img src="./images/icon_grey.png" alt="GDG Aachen"></div>
+                <div class="col-md-10">&copy; 2013 Google Developer Group Aachen
+                    The GDG Aachen is an independent user group with
+                    an interest in Google technology and the content
+                    from this group is entirely independent from
+                    Google, the corporation.</div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="row">
+                <div class="col-md-2"><img src="./images/html5.png" alt="I've seen the future...it's in your browser."></div>
+                <div class="col-md-9">Yes, we're using HTML5. To make sure you get the best experience get a <a href="http://www.google.com/chrome/">Browser</a> that supports it!</div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="row">
+                <div class="col-md-2"><img src="./images/angularjs.png" alt="HTML enhanced for web apps!"></div>
+                <div class="col-md-10">Powered by <a href="http://angularjs.org/">AngularJS</a>, the superheroic JavaScript MVV Framework by the good folks at Google.</div>
+            </div>
+        </div>
+    </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -41,8 +107,10 @@
        ga('send', 'pageview');
     </script>
 
+    <script type="text/javascript" src="https://apis.google.com/js/platform.js"></script>
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
 
         <!-- build:js(app) scripts/plugins.js -->
         <script src="bower_components/sass-bootstrap/js/affix.js"></script>
@@ -64,11 +132,14 @@
         <script src="bower_components/angular-cookies/angular-cookies.js"></script>
         <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
         <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="bower_components/angular-moment/angular-moment.js"></script>
         <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/directives/plus.js"></script>
         <!-- endbuild -->
 </body>
 </html>
