@@ -51,7 +51,7 @@ angular.module('gdgPlus', [])
     .directive('plusActivities', ['$timeout', '$window', function() {
         return {
             restrict: 'AEC',
-            templateUrl: 'views/directives/plus_activities',
+            templateUrl: 'directives/plus_activities',
             scope: {
                 href: "@href"
             },

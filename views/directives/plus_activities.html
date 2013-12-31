@@ -1,0 +1,93 @@
+<div class="row">
+    <div class="col-md-6">
+
+        <div ng-repeat="item in stream.items">
+            <div class="card">
+                <div class="card-heading image">
+                    <img ng-src="{{item.actor.image.url}}" alt="46x46" style="width: 46px; height: 46px">
+                    <div class="card-heading-header">
+                        <h3>{{item.actor.displayName}}</h3>
+                        <span><span am-time-ago="item.published"></span> - <a ng-href="{{item.url}}"><span>{{item.published | amDateFormat:'MMM DD, YYYY'}}</span></a></span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div ng-switch="item.verb">
+                        <div ng-switch-when="post">
+                            <p><div ng-bind-html="item.object.content" style="overflow-wrap: break-word"></div></p>
+                        </div>
+                        <div ng-switch-when="share">
+                            <p><div ng-bind-html="item.annotation" style="overflow-wrap: break-word"></div></p>
+                            <hr>
+                            <p><a ng-href="{{item.object.actor.url}}">{{item.object.actor.displayName}}</a> <a ng-href="{{item.object.url}}">originally shared:</a></p>
+                            <p><div ng-bind-html="item.object.content"></div></p>
+                        </div>
+                    </div>
+                </div>
+                <div ng-repeat="attachment in item.object.attachments">
+                    <div class="card-media">
+                        <div ng-switch="attachment.objectType">
+                            <div ng-switch-when="album">album</div>
+                            <div ng-switch-when="photo">
+                                <a class="card-media-container" ng-href="{{attachment.url}}">
+                                    <img ng-src="{{attachment.image.url}}">
+                                </a>
+                            </div>
+                            <div ng-switch-when="article">article</div>
+                            <div ng-switch-when="event">event</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-comments clearfix">
+                    <div class="pull-left" plus-share="" href="{{item.url}}"></div>
+                    <div class="pull-right" plus-one="" href="{{item.url}}"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-6">
+        <div ng-repeat="item in muh.items">
+            <div class="card">
+                <div class="card-heading image">
+                    <img ng-src="{{item.actor.image.url}}" alt="46x46" style="width: 46px; height: 46px">
+                    <div class="card-heading-header">
+                        <h3>{{item.actor.displayName}}</h3>
+                        <span><span am-time-ago="item.published"></span> - <a ng-href="{{item.url}}"><span>{{item.published | amDateFormat:'MMM DD, YYYY'}}</span></a></span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div ng-switch="item.verb">
+                        <div ng-switch-when="post">
+                            <p><div ng-bind-html="item.object.content" style="overflow-wrap: break-word"></div></p>
+                        </div>
+                        <div ng-switch-when="share">
+                            <p><div ng-bind-html="item.annotation" style="overflow-wrap: break-word"></div></p>
+                            <hr>
+                            <p><a ng-href="{{item.object.actor.url}}">{{item.object.actor.displayName}}</a> <a ng-href="{{item.object.url}}">originally shared:</a></p>
+                            <p><div ng-bind-html="item.object.content"></div></p>
+                        </div>
+                    </div>
+                </div>
+                <div ng-repeat="attachment in item.object.attachments">
+                    <div class="card-media">
+                        <div ng-switch="attachment.objectType">
+                            <div ng-switch-when="album">album</div>
+                            <div ng-switch-when="photo">
+                                <a class="card-media-container" ng-href="{{attachment.url}}">
+                                    <img ng-src="{{attachment.image.url}}">
+                                </a>
+                            </div>
+                            <div ng-switch-when="article">article</div>
+                            <div ng-switch-when="event">event</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-comments clearfix">
+                    <div class="pull-left" plus-share="" href="{{item.url}}"></div>
+                    <div class="pull-right" plus-one="" href="{{item.url}}"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -179,7 +179,7 @@ module.exports = function (grunt) {
              '<%= yeoman.views %>/{,*/}*.jade'],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
-        assetsDirs: ['<%= yeoman.dist %>']
+        assetsDirs: ['<%= yeoman.dist %>', '<%= yeoman.dist%>/images']
       }
     },
 
@@ -219,7 +219,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>/<%= yeoman.views %>',
-          src: ['*.html', 'partials/*.html'],
+          src: ['*.html', 'partials/*.html', 'directives/*.html'],
           dest: '<%= yeoman.views %>'
         }]
       }

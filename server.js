@@ -42,7 +42,6 @@ app.configure(function(){
 	app.use(express.logger('dev'));
 	app.use(express.bodyParser());
 	app.use(express.methodOverride());
-
   // Router needs to be last
 	app.use(app.router);
 });
@@ -56,6 +55,7 @@ app.get('/api/awesomeThings', api.awesomeThings);
 
 // Angular Routes
 app.get('/partials/*', controllers.partials);
+app.get('/directives/*', controllers.partials);
 app.get('/*', controllers.index);
 
 // Start server
